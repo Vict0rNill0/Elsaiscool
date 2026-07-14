@@ -4,6 +4,35 @@ const closeButton = document.querySelector('.video-modal__close');
 const music = document.querySelector('#background-music');
 const musicButton = document.querySelector('.music-button');
 const musicInvite = 'Mach das Volumen hoch und drück hier. Du wirst es verstehen.';
+const passwordGate = document.querySelector('.password-gate');
+const passwordForm = document.querySelector('.password-form');
+const passwordInput = document.querySelector('#password-input');
+const passwordError = document.querySelector('.password-error');
+const password = 'Elsaiscool';
+
+function unlockPage() {
+  sessionStorage.setItem('elsaGiftUnlocked', 'true');
+  document.body.classList.remove('is-locked');
+  passwordGate.hidden = true;
+}
+
+if (sessionStorage.getItem('elsaGiftUnlocked') === 'true') {
+  unlockPage();
+} else {
+  document.body.classList.add('is-locked');
+}
+
+passwordForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  if (passwordInput.value.trim() === password) {
+    unlockPage();
+    return;
+  }
+
+  passwordError.hidden = false;
+  passwordInput.select();
+});
 
 function setMusicButtonLabel() {
   const isCompact = window.scrollY > 160;

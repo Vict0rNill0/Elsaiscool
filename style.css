@@ -27,6 +27,10 @@ body {
   line-height: 1.5;
 }
 
+body.is-locked {
+  overflow: hidden;
+}
+
 img,
 video {
   display: block;
@@ -35,6 +39,81 @@ video {
 
 a {
   color: inherit;
+}
+
+.password-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 207, 143, 0.35), transparent 22rem),
+    linear-gradient(160deg, #241b16, #4b3126 52%, #f0d9bf);
+}
+
+.password-gate[hidden] {
+  display: none;
+}
+
+.password-gate__card {
+  width: min(100%, 30rem);
+  padding: clamp(1.25rem, 6vw, 2rem);
+  border: 1px solid rgba(255, 248, 239, 0.22);
+  border-radius: 2rem;
+  background: rgba(255, 248, 239, 0.92);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.32);
+}
+
+.password-gate__card h2 {
+  margin-top: 0.45rem;
+  font-size: clamp(2.4rem, 12vw, 4.8rem);
+}
+
+.password-gate__card p {
+  color: var(--muted);
+}
+
+.password-form {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.password-form label {
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.password-form input {
+  min-height: 3.2rem;
+  border: 1px solid rgba(36, 27, 22, 0.18);
+  border-radius: 1rem;
+  background: #fffaf2;
+  color: var(--ink);
+  padding: 0.85rem 1rem;
+  font: inherit;
+  font-size: 1.1rem;
+}
+
+.password-form button {
+  min-height: 3.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff8ef;
+  font: inherit;
+  font-weight: 900;
+}
+
+.password-error {
+  margin: 0;
+  color: #9b312c;
+  font-size: 0.92rem;
+  font-weight: 800;
 }
 
 .hero,
@@ -389,13 +468,13 @@ details p {
   justify-content: center;
   min-height: 3.2rem;
   padding: 0.9rem 1.15rem;
-  border: 1px solid rgba(36, 27, 22, 0.2);
+  border: 0;
   border-radius: 999px;
-  background: rgba(255, 248, 239, 0.75);
-  color: var(--ink);
-  font-weight: 850;
+  background: #2563eb;
+  color: #fff8ef;
+  font-weight: 800;
   text-decoration: none;
-  box-shadow: 0 14px 35px rgba(36, 27, 22, 0.12);
+  box-shadow: 0 14px 35px rgba(37, 99, 235, 0.22);
 }
 
 .video-modal {
