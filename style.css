@@ -366,8 +366,35 @@ details p {
   padding-block: 4rem 6rem;
 }
 
+.closing__aside {
+  max-width: 31rem;
+  font-size: 0.98rem;
+}
+
+.closing__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
 .whatsapp {
   background: #1f7a45;
+}
+
+.call-button {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.2rem;
+  padding: 0.9rem 1.15rem;
+  border: 1px solid rgba(36, 27, 22, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 248, 239, 0.75);
+  color: var(--ink);
+  font-weight: 850;
+  text-decoration: none;
+  box-shadow: 0 14px 35px rgba(36, 27, 22, 0.12);
 }
 
 .video-modal {
