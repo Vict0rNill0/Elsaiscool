@@ -3,17 +3,30 @@ const player = document.querySelector('.video-modal__player');
 const closeButton = document.querySelector('.video-modal__close');
 const music = document.querySelector('#background-music');
 const musicButton = document.querySelector('.music-button');
-const musicInvite = 'Mach das Volumen hoch und drück hier. Du wirst es verstehen.';
+const musicGate = document.querySelector('.music-gate');
+const musicStart = document.querySelector('.music-start');
+const musicSkip = document.querySelector('.music-skip');
 const passwordGate = document.querySelector('.password-gate');
 const passwordForm = document.querySelector('.password-form');
 const passwordInput = document.querySelector('#password-input');
+const passwordToggle = document.querySelector('.password-toggle');
 const passwordError = document.querySelector('.password-error');
 const password = 'Elsaiscool';
+
+function showMusicPrompt() {
+  if (sessionStorage.getItem('elsaMusicPromptDone') === 'true') {
+    document.body.classList.add('music-ready');
+    return;
+  }
+
+  musicGate.hidden = false;
+}
 
 function unlockPage() {
   sessionStorage.setItem('elsaGiftUnlocked', 'true');
   document.body.classList.remove('is-locked');
   passwordGate.hidden = true;
+  showMusicPrompt();
 }
 
 if (sessionStorage.getItem('elsaGiftUnlocked') === 'true') {
@@ -34,18 +47,35 @@ passwordForm.addEventListener('submit', (event) => {
   passwordInput.select();
 });
 
+passwordToggle.addEventListener('click', () => {
+  const isVisible = passwordInput.type === 'text';
+  passwordInput.type = isVisible ? 'password' : 'text';
+  passwordToggle.textContent = isVisible ? '👁' : '🙈';
+  passwordToggle.setAttribute('aria-pressed', String(!isVisible));
+  passwordToggle.setAttribute('aria-label', isVisible ? 'Passwort anzeigen' : 'Passwort verbergen');
+  passwordInput.focus();
+});
+
 function setMusicButtonLabel() {
-  const isCompact = window.scrollY > 160;
-  musicButton.classList.toggle('is-compact', isCompact);
-
-  if (isCompact) {
-    musicButton.textContent = music.paused ? '🔇' : '🔊';
-    musicButton.setAttribute('aria-label', music.paused ? 'Hintergrundmusik starten' : 'Hintergrundmusik stoppen');
-    return;
-  }
-
-  musicButton.textContent = music.paused ? musicInvite : 'Das läuft jetzt. Laut genug?';
+  musicButton.textContent = music.paused ? '🔇' : '🔊';
   musicButton.setAttribute('aria-label', music.paused ? 'Hintergrundmusik starten' : 'Hintergrundmusik stoppen');
+}
+
+function dismissMusicPrompt() {
+  sessionStorage.setItem('elsaMusicPromptDone', 'true');
+  document.body.classList.add('music-ready');
+  musicGate.hidden = true;
+  setMusicButtonLabel();
+}
+
+function startMusic() {
+  music.volume = 0.42;
+  music.play().then(() => {
+    musicButton.setAttribute('aria-pressed', 'true');
+    dismissMusicPrompt();
+  }).catch(() => {
+    musicStart.textContent = 'Noch einmal';
+  });
 }
 
 function closeVideo() {
@@ -67,13 +97,7 @@ document.querySelectorAll('[data-video]').forEach((button) => {
 
 musicButton.addEventListener('click', () => {
   if (music.paused) {
-    music.volume = 0.42;
-    music.play().then(() => {
-      musicButton.setAttribute('aria-pressed', 'true');
-      setMusicButtonLabel();
-    }).catch(() => {
-      musicButton.textContent = 'Noch einmal tippen';
-    });
+    startMusic();
     return;
   }
 
@@ -82,7 +106,10 @@ musicButton.addEventListener('click', () => {
   setMusicButtonLabel();
 });
 
-window.addEventListener('scroll', setMusicButtonLabel, { passive: true });
+musicStart.addEventListener('click', startMusic);
+
+musicSkip.addEventListener('click', dismissMusicPrompt);
+
 setMusicButtonLabel();
 
 closeButton.addEventListener('click', closeVideo);

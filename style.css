@@ -94,17 +94,36 @@ a {
 }
 
 .password-form input {
+  width: 100%;
   min-height: 3.2rem;
   border: 1px solid rgba(36, 27, 22, 0.18);
   border-radius: 1rem;
   background: #fffaf2;
   color: var(--ink);
-  padding: 0.85rem 1rem;
+  padding: 0.85rem 3.15rem 0.85rem 1rem;
   font: inherit;
   font-size: 1.1rem;
 }
 
-.password-form button {
+.password-field {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.45rem;
+  top: 50%;
+  width: 2.45rem;
+  height: 2.45rem;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 999px;
+  background: rgba(36, 27, 22, 0.08);
+  color: var(--ink);
+  font: inherit;
+}
+
+.password-form > button[type="submit"] {
   min-height: 3.2rem;
   border: 0;
   border-radius: 999px;
@@ -119,6 +138,66 @@ a {
   color: #9b312c;
   font-size: 0.92rem;
   font-weight: 800;
+}
+
+.music-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(36, 27, 22, 0.38);
+  backdrop-filter: blur(18px);
+}
+
+.music-gate[hidden] {
+  display: none;
+}
+
+.music-gate__card {
+  width: min(100%, 28rem);
+  padding: clamp(1.4rem, 7vw, 2.2rem);
+  border: 1px solid rgba(255, 248, 239, 0.32);
+  border-radius: 2rem;
+  background: rgba(255, 248, 239, 0.88);
+  text-align: center;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
+}
+
+.music-gate__card h2 {
+  margin-top: 0.5rem;
+  font-size: clamp(2.8rem, 14vw, 5.8rem);
+}
+
+.music-gate__card p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.music-start {
+  width: 5rem;
+  height: 5rem;
+  margin-top: 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff8ef;
+  font: inherit;
+  font-size: 1.65rem;
+  font-weight: 900;
+  box-shadow: 0 18px 40px rgba(36, 27, 22, 0.28);
+}
+
+.music-skip {
+  display: block;
+  margin: 1rem auto 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 750;
 }
 
 .hero,
@@ -233,6 +312,10 @@ h3 {
   backdrop-filter: blur(16px);
   box-shadow: 0 12px 32px rgba(36, 27, 22, 0.2);
   transition: width 0.25s ease, padding 0.25s ease, border-radius 0.25s ease, transform 0.25s ease;
+}
+
+body:not(.music-ready) .music-button {
+  display: none;
 }
 
 .music-button.is-compact {

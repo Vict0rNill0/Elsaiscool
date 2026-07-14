@@ -18,16 +18,27 @@
         <p class="password-gate__hint"><span aria-hidden="true">👀</span> Kennst du das Passwort nicht? Dann lies dein Arbeitsblatt mit dem QR-Code nochmal.</p>
         <form class="password-form">
           <label for="password-input">Passwort</label>
-          <input id="password-input" type="password" autocomplete="current-password" inputmode="text" required>
+          <div class="password-field">
+            <input id="password-input" type="password" autocomplete="current-password" inputmode="text" required>
+            <button class="password-toggle" type="button" aria-label="Passwort anzeigen" aria-pressed="false">👁</button>
+          </div>
           <button type="submit">Öffnen</button>
           <p class="password-error" role="alert" hidden>Das war es noch nicht.</p>
         </form>
       </div>
     </section>
 
-    <button class="music-button" type="button" aria-pressed="false" aria-label="Hintergrundmusik starten">
-      Mach das Volumen hoch und drück hier. Du wirst es verstehen.
-    </button>
+    <section class="music-gate" aria-labelledby="music-title" hidden>
+      <div class="music-gate__card">
+        <p class="eyebrow">Wichtig für die Experience</p>
+        <h2 id="music-title">Mach das Volumen hoch.</h2>
+        <p>Drück hier. Du wirst es verstehen.</p>
+        <button class="music-start" type="button" aria-label="Musik starten">▶</button>
+        <button class="music-skip" type="button">Ohne Musik weiter</button>
+      </div>
+    </section>
+
+    <button class="music-button is-compact" type="button" aria-pressed="false" aria-label="Hintergrundmusik starten">🔇</button>
     <audio id="background-music" src="audio/house-of-memories.mp3" loop preload="metadata"></audio>
 
     <main>
