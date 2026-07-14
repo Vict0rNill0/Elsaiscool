@@ -367,8 +367,9 @@ details p {
 }
 
 .closing__aside {
-  max-width: 31rem;
-  font-size: 0.98rem;
+  max-width: 26rem;
+  font-size: 0.9rem;
+  opacity: 0.78;
 }
 
 .closing__actions {
