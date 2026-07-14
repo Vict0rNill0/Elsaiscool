@@ -5,7 +5,6 @@ const music = document.querySelector('#background-music');
 const musicButton = document.querySelector('.music-button');
 const musicGate = document.querySelector('.music-gate');
 const musicStart = document.querySelector('.music-start');
-const musicSkip = document.querySelector('.music-skip');
 const passwordGate = document.querySelector('.password-gate');
 const passwordForm = document.querySelector('.password-form');
 const passwordInput = document.querySelector('#password-input');
@@ -107,8 +106,6 @@ musicButton.addEventListener('click', () => {
 });
 
 musicStart.addEventListener('click', startMusic);
-
-musicSkip.addEventListener('click', dismissMusicPrompt);
 
 setMusicButtonLabel();
 
