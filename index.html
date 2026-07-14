@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#241b16">
-    <meta name="description" content="Ein persönlicher Ideen-Gutschein für Elsa und Connie.">
+    <meta name="description" content="Ein persönlicher Ideen-Gutschein für Elsa und Cornelius.">
     <title>Elsa ist cool</title>
     <link rel="preload" href="images/gemeinsam.webp" as="image">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <button class="music-button" type="button" aria-pressed="false">Musik an</button>
+    <button class="music-button" type="button" aria-pressed="false" aria-label="Hintergrundmusik starten">
+      Mach das Volumen hoch und drück hier. Du wirst es verstehen.
+    </button>
     <audio id="background-music" src="audio/house-of-memories.mp3" loop preload="metadata"></audio>
 
     <main>
@@ -19,7 +21,7 @@
         <p class="eyebrow">Ein Abschiedsgeschenk, das nicht herumliegt</p>
         <h1 id="hero-title">Alles Liebe für deinen neuen Weg, liebe Elsa.</h1>
         <p class="hero__lead">
-          Für dich und Connie: kein fertiges Ding, sondern Zeit, Ideen, Werkzeuge
+          Für dich und Cornelius: kein fertiges Ding, sondern Zeit, Ideen, Werkzeuge
           und Lust am Tüfteln. Wenn etwas passen, halten, klicken, leuchten,
           ordnen, erinnern oder einfach schön sein soll, dann bauen wir es zusammen.
         </p>
@@ -103,7 +105,7 @@
 
         <article class="gift-card">
           <div class="media-stack">
-            <img src="images/elektronik.webp" alt="Selbstgebaute Platine und Elektronik" loading="lazy">
+            <img src="images/elektronik-servo.webp" alt="Selbstgebaute Platine mit Servo" loading="lazy">
           </div>
           <div class="card-copy">
             <span>05</span>
@@ -111,6 +113,7 @@
             <p>Kleine smarte Lösungen, die messen, melden, schalten oder erinnern.</p>
             <details>
               <summary>Beispiele</summary>
+              <img class="example-image" src="images/elektronik.webp" alt="Selbstgebaute Platine als Elektronik-Beispiel" loading="lazy">
               <p>Sensoren, Benachrichtigungen, kleine Automationen, Ventile, Licht, Anzeigen oder ein Helfer, der im Hintergrund arbeitet.</p>
             </details>
           </div>
