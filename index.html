@@ -4,45 +4,48 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#241b16">
-    <meta name="description" content="Ein persoenlicher Ideen-Gutschein fuer Elsa und Connie.">
+    <meta name="description" content="Ein persönlicher Ideen-Gutschein für Elsa und Connie.">
     <title>Elsa ist cool</title>
     <link rel="preload" href="images/gemeinsam.webp" as="image">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <button class="music-button" type="button" aria-pressed="false">Musik an</button>
+    <audio id="background-music" src="audio/house-of-memories.mp3" loop preload="metadata"></audio>
+
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero__glow"></div>
         <p class="eyebrow">Ein Abschiedsgeschenk, das nicht herumliegt</p>
-        <h1 id="hero-title">Alles Liebe fuer deinen neuen Weg, liebe Elsa.</h1>
+        <h1 id="hero-title">Alles Liebe für deinen neuen Weg, liebe Elsa.</h1>
         <p class="hero__lead">
-          Fuer dich und Connie: kein fertiges Ding, sondern Zeit, Ideen, Werkzeuge
-          und Lust am Tuefteln. Wenn etwas passen, halten, klicken, leuchten,
-          ordnen, erinnern oder einfach schoen sein soll, dann bauen wir es zusammen.
+          Für dich und Connie: kein fertiges Ding, sondern Zeit, Ideen, Werkzeuge
+          und Lust am Tüfteln. Wenn etwas passen, halten, klicken, leuchten,
+          ordnen, erinnern oder einfach schön sein soll, dann bauen wir es zusammen.
         </p>
-        <a class="hero__scroll" href="#moeglichkeiten">Moeglichkeiten ansehen</a>
+        <a class="hero__scroll" href="#moeglichkeiten">Möglichkeiten ansehen</a>
       </section>
 
       <section id="moeglichkeiten" class="intro" aria-labelledby="intro-title">
-        <p class="eyebrow">Was entstehen koennte</p>
+        <p class="eyebrow">Was entstehen könnte</p>
         <h2 id="intro-title">Eine halbe Idee reicht.</h2>
         <p>
           Du musst noch nicht wissen, was es werden soll. Du kannst einfach sagen:
-          "Da muesste mal etwas hin", "das nervt mich" oder "das waere schoen".
+          "Da müsste mal etwas hin", "das nervt mich" oder "das wäre schön".
           Den Rest finden wir gemeinsam heraus.
         </p>
       </section>
 
-      <section class="cards" aria-label="Projektmoeglichkeiten">
+      <section class="cards" aria-label="Projektmöglichkeiten">
         <article class="gift-card gift-card--dark">
           <div class="media-stack">
-            <img src="images/metall.webp" alt="Metallarbeit und Schweissen" loading="lazy">
+            <img src="images/metall.webp" alt="Metallarbeit und Schweißen" loading="lazy">
             <button class="play-button" type="button" data-video="videos/metall.mp4" aria-label="Metall-Video abspielen">Play</button>
           </div>
           <div class="card-copy">
             <span>01</span>
             <h3>Metall</h3>
-            <p>Stabil, ehrlich, belastbar. Stahl sehr gerne, Aluminium mit Einschraenkungen.</p>
+            <p>Stabil, ehrlich, belastbar. Stahl sehr gerne, Aluminium mit Einschränkungen.</p>
             <details>
               <summary>Beispiele</summary>
               <p>Halterungen, kleine Gestelle, Reparaturen, passgenaue Teile oder etwas, das einfach wirklich halten muss.</p>
@@ -52,37 +55,39 @@
 
         <article class="gift-card">
           <div class="media-stack">
-            <img src="images/laser.webp" alt="Lasergravur auf Holz" loading="lazy">
+            <img src="images/laser-machine.webp" alt="Laserschneider und Gravurmaschine" loading="lazy">
           </div>
           <div class="card-copy">
             <span>02</span>
             <h3>Laser</h3>
-            <p>Schneiden, gravieren, beschriften, erinnern. Kleine Details, die sehr persoenlich werden koennen.</p>
+            <p>Schneiden, gravieren, beschriften, erinnern. Kleine Details, die sehr persönlich werden können.</p>
             <details>
               <summary>Beispiele</summary>
-              <p>Gravierte Holzstuecke, Schilder, Boxen, ausgeschnittene Formen, Schubladenteiler oder Erinnerungsstuecke.</p>
+              <img class="example-image" src="images/laser.webp" alt="Beispiel einer Lasergravur auf Holz" loading="lazy">
+              <p>Gravierte Holzstücke, Schilder, Boxen, ausgeschnittene Formen, Schubladenteiler oder Erinnerungsstücke.</p>
             </details>
           </div>
         </article>
 
         <article class="gift-card gift-card--warm">
           <div class="media-stack">
-            <img src="images/holz.webp" alt="Massarbeit aus Holz" loading="lazy">
+            <img src="images/holz.webp" alt="Maßarbeit aus Holz" loading="lazy">
           </div>
           <div class="card-copy">
             <span>03</span>
             <h3>Holz</h3>
-            <p>Warm, praktisch, schoen. Etwas, das zu einem echten Ort und einem echten Alltag passt.</p>
+            <p>Warm, praktisch, schön. Etwas, das zu einem echten Ort und einem echten Alltag passt.</p>
             <details>
               <summary>Beispiele</summary>
-              <p>Kleine Moebel, Aufbewahrung, Ablagen, Kisten, Plattenarbeiten oder ein Teil, das genau in eine Ecke passen soll.</p>
+              <img class="example-image" src="images/holz-kitchen.webp" alt="Maßgebaute Holzküche als Beispiel" loading="lazy">
+              <p>Kleine Möbel, Aufbewahrung, Ablagen, Kisten, Plattenarbeiten oder ein Teil, das genau in eine Ecke passen soll.</p>
             </details>
           </div>
         </article>
 
         <article class="gift-card gift-card--dark">
           <div class="media-stack">
-            <img src="images/3d-druck.webp" alt="3D-Drucker fuer massgeschneiderte Teile" loading="lazy">
+            <img src="images/3d-druck.webp" alt="3D-Drucker für maßgeschneiderte Teile" loading="lazy">
             <button class="play-button" type="button" data-video="videos/3d-druck.mp4" aria-label="3D-Druck-Video abspielen">Play</button>
           </div>
           <div class="card-copy">
@@ -91,7 +96,7 @@
             <p>Wenn es nichts Passendes gibt, machen wir es passend.</p>
             <details>
               <summary>Beispiele</summary>
-              <p>Clips, Halter, Fuehrungen, Adapter, Ersatzteile, Organizer oder Dinge, die exakt klicken und sitzen muessen.</p>
+              <p>Clips, Halter, Führungen, Adapter, Ersatzteile, Organizer oder Dinge, die exakt klicken und sitzen müssen.</p>
             </details>
           </div>
         </article>
@@ -103,7 +108,7 @@
           <div class="card-copy">
             <span>05</span>
             <h3>Elektronik & Code</h3>
-            <p>Kleine smarte Loesungen, die messen, melden, schalten oder erinnern.</p>
+            <p>Kleine smarte Lösungen, die messen, melden, schalten oder erinnern.</p>
             <details>
               <summary>Beispiele</summary>
               <p>Sensoren, Benachrichtigungen, kleine Automationen, Ventile, Licht, Anzeigen oder ein Helfer, der im Hintergrund arbeitet.</p>
@@ -118,7 +123,7 @@
           <div class="card-copy">
             <span>06</span>
             <h3>Drohne & Video</h3>
-            <p>Wenn eine Idee nicht nur gebaut, sondern auch schoen festgehalten werden soll.</p>
+            <p>Wenn eine Idee nicht nur gebaut, sondern auch schön festgehalten werden soll.</p>
             <details>
               <summary>Beispiele</summary>
               <p>Drohnenaufnahmen, kleine Videos, Perspektiven von oben oder ein kurzer Film von etwas, das euch wichtig ist.</p>
@@ -134,7 +139,7 @@
           <div class="card-copy">
             <span>07</span>
             <h3>MacGyver</h3>
-            <p>Wenn es funktionieren muss, finden wir einen Weg. Nicht immer huebsch am Anfang, aber sehr oft wirksam.</p>
+            <p>Wenn es funktionieren muss, finden wir einen Weg. Nicht immer hübsch am Anfang, aber sehr oft wirksam.</p>
             <details>
               <summary>Beispiele</summary>
               <p>Reparieren, retten, reinigen, umbauen, improvisieren oder aus wenig Material wieder etwas Brauchbares machen.</p>
@@ -144,7 +149,7 @@
 
         <article class="gift-card gift-card--final">
           <div class="media-stack">
-            <img src="images/gemeinsam.webp" alt="Insider-Bild fuer Elsa" loading="lazy">
+            <img src="images/gemeinsam.webp" alt="Insider-Bild für Elsa" loading="lazy">
           </div>
           <div class="card-copy">
             <span>08</span>
@@ -162,15 +167,15 @@
         <p class="eyebrow">Der Gutschein</p>
         <h2 id="closing-title">Schreib mir einfach eine Idee.</h2>
         <p>
-          Gross, klein, praktisch, schoen, verrueckt oder noch ganz unfertig.
+          Groß, klein, praktisch, schön, verrückt oder noch ganz unfertig.
           Wir schauen zusammen, was daraus werden kann.
         </p>
-        <a class="whatsapp" href="https://wa.me/?text=Ich%20habe%20eine%20Idee%20fuer%20Elsas%20Ideen-Gutschein%20%3A-)" target="_blank" rel="noreferrer">Idee per WhatsApp starten</a>
+        <a class="whatsapp" href="https://wa.me/4915901097887?text=Ich%20habe%20eine%20Idee%20f%C3%BCr%20Elsas%20Ideen-Gutschein%20%3A-)" target="_blank" rel="noreferrer">Idee per WhatsApp starten</a>
       </section>
     </main>
 
     <div class="video-modal" hidden>
-      <button class="video-modal__close" type="button" aria-label="Video schliessen">Schliessen</button>
+      <button class="video-modal__close" type="button" aria-label="Video schließen">Schließen</button>
       <video class="video-modal__player" playsinline muted loop controls></video>
     </div>
 
